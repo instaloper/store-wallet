@@ -1,0 +1,38 @@
+.sign-nav {
+    margin-top: 20px;
+    display: flex;
+    color: $gray;
+
+    .link {
+        margin-left: 4px;
+    }
+}
+
+.sign-scroll-fix {
+    max-height: calc(100vh - 70px);
+    height: 100vh;
+    overflow: overlay;
+    display: flex;
+
+	.main-form {
+		padding: 0;
+
+		@media only screen and (min-height: 620px) {
+			height: 500px;
+		}
+
+		@media only screen and (min-height: 900px) {
+			margin-top: calc(14.8vh - 1px);
+			padding: 0px;
+
+		}
+
+		.form-panel {
+			margin: 30px 0 auto;
+
+			.fix-width {
+				width: 160px;
+			}
+		}
+	}
+}

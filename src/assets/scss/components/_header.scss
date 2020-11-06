@@ -1,0 +1,230 @@
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	height: 50px;
+	padding: 0 24px 0 17px;
+
+	&:before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 50px;
+		display: block;
+		min-width: 308px;
+		background-color: rgb(247, 247, 247);
+		right: 0;
+		z-index: 10;
+	}
+
+	.page-title,
+	.frozenfunds,
+	.nav-link,
+	.icon-back,
+	.user-dropdown>.text,
+	.user-dropdown>.dropdown.icon {
+		z-index: 11;
+	}
+
+	.icon-back {
+		line-height: 15px;
+		padding: 2px 3px 0 0;
+		color: rgba(#c4c5ca, 1);
+		margin: 0 10px 0 0;
+		transition: color .3s;
+		display: block;
+		background-color: transparent;
+		border: 0;
+		cursor: pointer;
+
+		&:focus {
+			border-radius: 4px;
+			@include on-focus(4px);
+		}
+
+		&:focus,
+		&:hover {
+			color: rgba(#6d7178, 1);
+		}
+
+		&:active {
+			box-shadow: none;
+		}
+
+		&.sub+.page-title {
+			font-size: 16px;
+		}
+	}
+
+	.page-title {
+		color: $text-dark;
+		font-size: 20px;
+		font-family: proxima;
+		font-weight: 600;
+		line-height: 26.4px;
+		margin-right: auto;
+	}
+
+	.show-sidebar-btn {
+		color: $text-dark;
+		cursor: pointer;
+		transition: color .3s;
+		display: block;
+		margin-right: 20px;
+
+		.icon-menu {
+			line-height: 19px;
+		}
+	}
+
+	.panel-right {
+		margin-left: 0;
+		display: flex;
+		align-items: center;
+	}
+
+	.dropdown {
+		line-height: normal;
+	}
+}
+
+.frozenfunds {
+	position: relative;
+	min-width: 146px;
+	height: 100%;
+	border-left: 1px solid #e9e9ed;
+	border-right: 1px solid #e9e9ed;
+	text-align: right;
+
+	a,
+	button {
+		margin-left: auto;
+		width: 100%;
+		height: 100%;
+		padding: 10px 0 12px 0;
+		background-color: transparent;
+		border: 0;
+		text-align: right;
+
+		&:hover {
+			background-color: #f2f2f2;
+			cursor: pointer;
+
+			&+.inner-tooltip {
+				display: block;
+				animation: inner-tooltip .2s ease forwards;
+			}
+		}
+
+		&:focus {
+			box-shadow: 2px 0 0 0 rgba(186, 188, 203, 0.4), -2px 0 0 0 rgba(186, 188, 203, 0.4);
+			background-color: #f2f2f2;
+		}
+
+		&:active {
+			opacity: 0.4;
+			background-color: #f2f2f2;
+			cursor: default;
+		}
+	}
+
+	.inner-info {
+		display: block;
+		color: rgba(#5c637d, 0.5);
+		font-family: proxima;
+		font-size: 14px;
+		line-height: 17px;
+		font-weight: 400;
+		padding-right: 43px;
+		padding-left: 22px;
+
+		.balance {
+			span {
+				color: rgba(#5c637d, 0.9);
+				font-weight: 300;
+				text-transform: uppercase;
+
+				&:first-child {
+					font-family: proxima;
+					font-weight: 600;
+					padding-right: 3px;
+				}
+			}
+		}
+	}
+
+	.icon-frozen-funds {
+		position: absolute;
+		font-size: 19px;
+		right: 19px;
+		top: 15px;
+
+		&:before {
+			color: #4d66cd;
+			opacity: 1;
+		}
+	}
+
+	.inner-tooltip {
+		position: absolute;
+		top: 45px;
+		display: none;
+		z-index: 100;
+		margin: 0;
+		width: 255px;
+	}
+}
+
+.header-global {
+	-webkit-app-region: drag;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: $main-color;
+	color: #fff;
+	height: 30px;
+	padding: 0 18px;
+	position: absolute;
+	z-index: 9999998;
+	right: 150px;
+	left: 0;
+	top: 0;
+
+}
+
+.user-section {
+	margin-top: 3px;
+	margin-left: 22px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+
+	.balance {
+		transition: color $speed;
+		color: #5D637B;
+		position: relative;
+		font-weight: 300;
+
+		span {
+			&:nth-child(1) {
+				font-family: proxima;
+				font-weight: 600;
+				margin-right: 3px;
+			}
+		}
+	}
+}
+
+.asset-tooltip {
+	position: absolute;
+	margin-bottom: 10px;
+	margin-left: -20px;
+	padding: 5px 10px;
+	color: #3b3b3b;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 18px;
+	border-radius: 4px;
+	border: 1px solid rgba(59, 59, 59, 0.4);
+	background: #fff6d2;
+}

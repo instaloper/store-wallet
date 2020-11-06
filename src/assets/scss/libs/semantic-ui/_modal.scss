@@ -1,0 +1,342 @@
+.modal {
+	display: none;
+	z-index: 1001;
+	text-align: left;
+	background: #FFFFFF;
+	border: none;
+	transform-origin: 50% 25%;
+	flex: 0 0 auto;
+	border-radius: 4px;
+	user-select: text;
+	will-change: top, left, margin, transform, opacity;
+	animation: fadeIn $speed;
+}
+
+.modal > :first-child:not(.icon),
+.modal > .icon:first-child + * {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.modal > :last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+
+/* Modal Width */
+@media only screen and (max-width: 767px) {
+  .modal {
+    width: 95%;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .modal {
+    width: 88%;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .modal {
+    width: 850px;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .modal {
+    width: 900px;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .modal {
+    width: 950px;
+    margin: 0;
+  }
+}
+
+
+.inverted.dimmer > .modal {
+    box-shadow: none;
+}
+
+
+/*******************************
+             Types
+*******************************/
+
+.basic.modal {
+  background-color: transparent;
+  border: none;
+  border-radius: 0em;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  color: #FFFFFF;
+}
+.basic.modal > .header,
+.basic.modal > .content,
+.basic.modal > .actions {
+  background-color: transparent;
+}
+.basic.modal > .header {
+  color: #FFFFFF;
+}
+.basic.modal > .close {
+  top: 1rem;
+  right: 1.5rem;
+}
+.inverted.dimmer > .basic.modal {
+  color: rgba(0, 0, 0, 0.87);
+}
+.inverted.dimmer > .basic.modal > .header {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+/* Tablet and Mobile */
+@media only screen and (max-width: 991px) {
+  .basic.modal > .close {
+    color: #FFFFFF;
+  }
+}
+
+
+/*******************************
+             States
+*******************************/
+
+.loading.modal {
+  display: block;
+  visibility: hidden;
+  z-index: -1;
+}
+.active.modal {
+  display: block;
+  margin: auto !important;
+}
+
+
+/*******************************
+           Variations
+*******************************/
+
+
+/*--------------
+   Top Aligned
+---------------*/
+
+
+/* Top Aligned Modal */
+.modals.dimmer[class*="top aligned"] .modal {
+  margin: 5vh auto;
+}
+
+/*--------------
+    Scrolling
+---------------*/
+
+
+/* Scrolling Dimmer */
+.scrolling.dimmable.dimmed {
+  overflow: hidden;
+}
+.scrolling.dimmable > .dimmer {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.scrolling.dimmable.dimmed > .dimmer {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.scrolling.dimmable > .dimmer {
+  position: fixed;
+}
+.modals.dimmer .scrolling.modal {
+  margin: 1rem auto !important;
+}
+
+/* Undetached Scrolling */
+.scrolling.undetached.dimmable.dimmed {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.scrolling.undetached.dimmable.dimmed > .dimmer {
+  overflow: hidden;
+}
+.scrolling.undetached.dimmable .scrolling.modal {
+  position: absolute;
+  left: 50%;
+  margin-top: 1rem !important;
+}
+
+/* Scrolling Content */
+.modal .scrolling.content {
+  max-height: calc(70vh);
+  overflow: auto;
+}
+
+/*--------------
+   Full Screen
+---------------*/
+
+.fullscreen.modal {
+  width: 95% !important;
+  left: 0em !important;
+  margin: 1em auto;
+}
+.fullscreen.scrolling.modal {
+  left: 0em !important;
+}
+.fullscreen.modal > .header {
+  padding-right: 2.25rem;
+}
+.fullscreen.modal > .close {
+  top: 1.0535rem;
+  right: 1rem;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+/*--------------
+      Size
+---------------*/
+
+/* Mini Modal Width */
+@media only screen and (max-width: 767px) {
+  .mini.modal {
+    width: 95%;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .mini.modal {
+    width: 35.2%;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .mini.modal {
+    width: 340px;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .mini.modal {
+    width: 360px;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .mini.modal {
+    width: 380px;
+    margin: 0;
+  }
+}
+
+/* mini */
+.small.modal > .header:not() {
+  font-size: 1.3em;
+}
+
+/* Tiny Modal Width */
+@media only screen and (max-width: 767px) {
+  .tiny.modal {
+    width: 95%;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .tiny.modal {
+    width: 52.8%;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .tiny.modal {
+    width: 510px;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .tiny.modal {
+    width: 540px;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .tiny.modal {
+    width: 570px;
+    margin: 0;
+  }
+}
+
+/* Small */
+.small.modal > .header:not() {
+  font-size: 1.3em;
+}
+
+/* Small Modal Width */
+@media only screen and (max-width: 767px) {
+  .small.modal {
+    width: 95%;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .small.modal {
+    width: 70.4%;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .small.modal {
+    width: 650px;
+    margin: 0;
+  }
+}
+
+/* Large Modal Width */
+.large.modal > .header {
+  font-size: 1.6em;
+}
+@media only screen and (max-width: 767px) {
+  .large.modal {
+    width: 95%;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .large.modal {
+    width: 88%;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .large.modal {
+    width: 1020px;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .large.modal {
+    width: 1080px;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .large.modal {
+    width: 1140px;
+    margin: 0;
+  }
+}
+
+
+/*******************************
+         Theme Overrides
+*******************************/
+
+
+
+/*******************************
+         Site Overrides
+*******************************/
+

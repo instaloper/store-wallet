@@ -1,0 +1,34 @@
+.add-wif-modal {
+	@include modal-wrap();
+
+	.modal-header {
+		@include modal-header();
+	}
+
+	.modal-header-title {
+		@include modal-header-title();
+	}
+
+	.modal-body {
+		@include modal-body();
+	}
+
+	.field {
+		&>label {
+			min-height: 18px;
+		}
+	}
+
+	.input-password {
+		margin-bottom: 0;
+	}
+
+	.form-panel {
+		margin: 30px 0 0;
+
+		.main-btn {
+			margin-left: auto;
+			min-width: 160px;
+		}
+	}
+}

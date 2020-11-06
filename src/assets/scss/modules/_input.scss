@@ -1,0 +1,77 @@
+
+
+.input {
+	position: relative;
+	font-weight: normal;
+	font-style: normal;
+	display: inline-flex;
+	color: rgba(0, 0, 0, 0.87);
+}
+
+.input > input {
+	margin: 0em;
+	max-width: 100%;
+	flex: 1 0 auto;
+	outline: none;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	text-align: left;
+	line-height: 1.21428571em;
+	font-family: $font-family;
+	padding: 0.67857143em 1em;
+	background-color: #FFFFFF;
+	border: 1px solid $inut-color;
+	color: rgba(0, 0, 0, 0.87);
+	border-radius: 4px;
+	-webkit-transition: border-color $speed ease, -webkit-box-shadow $speed ease;
+	transition: border-color $speed ease, -webkit-box-shadow $speed ease;
+	transition: box-shadow $speed ease, border-color $speed ease;
+	transition: box-shadow $speed ease, border-color $speed ease, -webkit-box-shadow $speed ease;
+	&:hover {
+		border-color: $border-hover;
+	}
+}
+
+input:not([type]),
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="text"],
+input[type="file"],
+input[type="url"] {
+	font-family: $font-family;
+	margin: 0em;
+	outline: none;
+	line-height: 17px;
+	padding: 10px 14px;
+	font-size: 15px;
+	border: 1px solid $inut-color;
+	color: rgba(0, 0, 0, 0.87);
+	border-radius: 4px;
+	transition: color $speed ease, border-color $speed ease;
+}
+
+input {
+	width: 100%;
+	vertical-align: top;
+
+	&:disabled {
+		background-color: #EAEBED;
+		border: 1px solid#BABCCB;
+		color: #3B3B3B;
+	}
+	&:focus {
+		@include on-focus(4px);
+	}
+}
+  
+  /* browsers require these rules separate */
+ .input > input::-webkit-input-placeholder {
+	color: rgba(191, 191, 191, 0.87);
+  }
+ .input > input::-moz-placeholder {
+	color: rgba(191, 191, 191, 0.87);
+  }
+ .input > input:-ms-input-placeholder {
+	color: rgba(191, 191, 191, 0.87);
+}

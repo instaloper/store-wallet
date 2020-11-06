@@ -1,0 +1,30 @@
+.countdown {
+	font-size: 12px;
+	width: 24px;
+	height: 24px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #4D66CD;
+	font-family: proxima;
+	font-weight: 600;
+	.countdown-text {
+		margin-top: 1px;
+	}
+	&:before {
+		position: absolute;
+		right: 0;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		display: block;
+		content: "";
+		animation-name: spin;
+		animation-duration: 5000ms;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		background-repeat: no-repeat;
+		background-image: url(../images/countdown.svg);
+	}
+}

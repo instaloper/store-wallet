@@ -1,0 +1,39 @@
+.view-wif-modal {
+	@include modal-wrap();
+
+	.modal-header {
+		@include modal-header();
+	}
+
+	.modal-header-title {
+		@include modal-header-title();
+	}
+
+	.modal-body {
+		@include modal-body();
+	}
+
+	.field {
+		margin-bottom: 24px;
+		display: flex;
+		flex-direction: column;
+
+		.input {
+			max-width: calc(100% - 38px);
+		}
+
+		&>label {
+			min-height: 18px;
+		}
+	}
+
+	.form-panel {
+		margin: 12px 0 0;
+
+		.main-btn {
+			margin-left: auto;
+			min-width: 160px;
+		}
+	}
+
+}

@@ -1,0 +1,29 @@
+* {
+    &::-webkit-resizer{
+        background-image:url('');
+        background-repeat:no-repeat;
+        width:0;
+        height:0px
+    }
+    &::-webkit-scrollbar{
+        width: 12px;
+        &-button {
+            background-image:url('');
+            background-repeat:no-repeat;
+            width:0;
+            height:0;
+        }
+        &-track {
+            background-color:#d4d4d4 !important;
+        }
+        &-thumb {
+            border-radius: 10px;
+            background-color: #fff !important;
+            border: 2px solid #d4d4d4;
+            &:hover {
+                background-color:rgba(#fff,.8) !important;;
+    
+            }
+        }
+    }
+}

@@ -1,0 +1,144 @@
+.check-list {
+	width: 100%;
+	margin-top: 27px;
+
+	.check {
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+
+		&.small {
+			margin-bottom: 16px;
+		}
+	}
+}
+
+.check {
+
+	.label {
+		display: flex;
+		align-items: center;
+		position: relative;
+		cursor: pointer;
+
+		&:before {
+			text-align: center;
+			font-family: 'icomoon';
+			src: url('../fonts/iconmoon/icomoon.eot?h46e29');
+			src: url('../fonts/iconmoon/icomoon.eot?h46e29#iefix') format('embedded-opentype'),
+				url('../fonts/iconmoon/icomoon.ttf?h46e29') format('truetype'),
+				url('../fonts/iconmoon/icomoon.woff?h46e29') format('woff'),
+				url('../fonts/iconmoon/icomoon.svg?h46e29#icomoon') format('svg');
+			font-weight: normal;
+			font-style: normal;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #fff;
+			min-width: 24px;
+			width: 24px;
+			height: 24px;
+			border-radius: 4px;
+			border: 2px solid $main-color;
+			margin-right: 10px;
+			content: "\e924";
+			transition: border $speed, background-color $speed, color $speed;
+			font-size: 7px;
+		}
+	}
+
+	.label-text {
+		color: rgba($black, .7);
+		font-size: 15px;
+		transition: color $speed;
+		pointer-events: none;
+		line-height: 1;
+	}
+
+	input[type="checkbox"] {
+		position: absolute;
+		opacity: 0;
+
+		&:disabled~.label {
+			opacity: .6;
+		}
+
+		&:checked~.label {
+			&:before {
+				background-color: $main-color;
+				border: 2px solid $main-color;
+			}
+		}
+
+		&:focus {
+			&~.label {
+				&:before {
+					@include on-focus(4px);
+				}
+
+			}
+		}
+
+		&:checked~.label {
+			.label-text {
+				color: $black;
+			}
+		}
+	}
+
+	// SIZE
+	&.small {
+		.label {
+			&:before {
+				min-width: 18px;
+				width: 18px;
+				height: 18px;
+			}
+		}
+	}
+}
+
+
+.radio {
+	display: flex;
+	align-items: center;
+	position: relative;
+	cursor: pointer;
+	color: rgba($black, .7);
+	font-size: 15px;
+	transition: color $speed;
+
+	&:before {
+		text-align: center;
+		display: block;
+		color: #fff;
+		min-width: 18px;
+		width: 18px;
+		height: 18px;
+		border-radius: 50%;
+		border: 2px solid $gray;
+		margin-right: 11px;
+		content: "";
+		transition: border $speed;
+		font-weight: 300;
+		font-size: 12px;
+	}
+
+	&:disabled {
+		opacity: .6;
+	}
+
+	&.checked {
+		color: $black;
+
+		&:before {
+			border: 5px solid $gray;
+		}
+	}
+
+	&:focus {
+		&:before {
+			@include on-focus(4px);
+		}
+	}
+}
